@@ -1,0 +1,213 @@
+/*
+  reset.css — nowoczesny, wydajny baseline
+  Inspiracje: Josh Comeau, Andy Bell / Piccalilli, modern-normalize
+  Cel: przewidywalny model pudełka, a11y, zero zbędnego kosztu layoutu
+*/
+
+@layer reset {
+  /* 1. Border-box przez dziedziczenie — tańsze nadpisy niż uniwersalny * */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    box-sizing: border-box;
+    /* Stabilna wysokość: % heights + mobile browser chrome */
+    height: 100%;
+    /* Blokuj auto-zoom fontów na mobile (iOS/Android) */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    /* Tabular layout / scroll anchoring — mniej CLS przy dynamicznej treści */
+    overflow-anchor: auto;
+    /* Płynne przewijanie tylko gdy user tego nie wyłączył */
+    scroll-behavior: auto;
+    /* Kolory systemowe / dark mode bez flashy JS */
+    color-scheme: light dark;
+    /* Lepsze rendering kerningu bez drogiego optimizeLegibility */
+    text-rendering: optimizeSpeed;
+    /* Interakcje: szybsze tap / mniej 300ms delay na starych WebKit */
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+      /* Umożliwia transition height/width: auto (nowoczesne silniki) */
+      interpolate-size: allow-keywords;
+    }
+  }
+
+  /*
+    2. Margin: dialog zostawiamy (centrowanie UA).
+       padding-inline-start list też zerujemy gdy role=list.
+  */
+  *:not(dialog) {
+    margin: 0;
+  }
+
+  body {
+    min-height: 100%;
+    min-height: 100dvh;
+    line-height: 1.5;
+    /* Subpixel AA na macOS/iOS — czytelność, mały koszt */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Unikaj layout thrash przy font swap (gdy dodasz webfonty) */
+    text-size-adjust: 100%;
+    /* Monospace — przewidywalne metryki, 0 webfontów */
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono",
+      monospace;
+  }
+
+  /* 3. Media: blok + max-width — zero overflow, zero baseline gap */
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Lazy decode hint dla przeglądarki (gdy atrybut loading=lazy) */
+  img {
+    content-visibility: auto;
+  }
+
+  /* SVG ikony inline nie powinny rozpychać layoutu */
+  svg:not([width]):not([height]) {
+    max-width: none;
+  }
+
+  /* 4. Formy dziedziczą typografię — spójność, mniej reguł per-komponent */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+  }
+
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  /* 5. Listy z jawną rolą — reset stylów listowych (nawigacje, menu) */
+  ul[role="list"],
+  ol[role="list"] {
+    list-style: none;
+    padding-inline-start: 0;
+  }
+
+  /* 6. Linki: zachowaj atrament, nie tnij descenderów */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: inherit;
+  }
+
+  /* 7. Typografia: unikaj overflow + lepsze łamanie nagłówków */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+    line-height: 1.15;
+  }
+
+  /* 8. Tabele — przewidywalny layout */
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  th {
+    text-align: inherit;
+    font-weight: 600;
+  }
+
+  /* 9. Ukryte / a11y */
+  [hidden] {
+    display: none !important;
+  }
+
+  /*
+    10. Reduced motion — krótki duration zamiast 0, by animationend/transitionend
+        nadal odpalały (Andy Bell pattern).
+  */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /*
+    11. Root isolation — stacking context pod app shell
+        (React/Next/Vue roots + generyczny #app).
+  */
+  #root,
+  #__next,
+  #app {
+    isolation: isolate;
+  }
+
+  /*
+    12. Focus widoczny, ale nie po kliknięciu myszą ( :focus-visible ).
+        outline-offset unika layout shift.
+  */
+  :focus {
+    outline: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid CanvasText;
+    outline-offset: 2px;
+  }
+
+  /* 13. Dialog / native popover — spójny baseline */
+  dialog {
+    border: none;
+    padding: 0;
+    max-width: calc(100% - 2rem);
+    max-height: calc(100% - 2rem);
+  }
+
+  dialog::backdrop {
+    background: color-mix(in srgb, CanvasText 40%, transparent);
+  }
+}

@@ -1,0 +1,2 @@
+# Custom domain apex/www redirects: configure in Cloudflare / Netlify dashboard.
+# Keep this file so the publish root is recognized by CF Pages & Netlify.

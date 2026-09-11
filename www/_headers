@@ -1,0 +1,22 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  # Form posts to FormSubmit; reCAPTCHA runs on their domain after submit
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self' https://formsubmit.co; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none'
+
+/*.html
+  Cache-Control: public, max-age=300, must-revalidate
+
+/reset.css
+  Cache-Control: public, max-age=86400
+
+/style.css
+  Cache-Control: public, max-age=86400
+
+/app.js
+  Cache-Control: public, max-age=86400
+
+/favicon.svg
+  Cache-Control: public, max-age=604800

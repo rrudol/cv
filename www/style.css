@@ -1,0 +1,427 @@
+/* Page styles — monospace CV, minimal + print */
+
+:root {
+  --fg: #111;
+  --muted: #555;
+  --line: #ccc;
+  --bg: #fff;
+  --focus: #111;
+  --max: 48rem;
+  --card: color-mix(in srgb, var(--fg) 4%, var(--bg));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #e8e8e8;
+    --muted: #9a9a9a;
+    --line: #3a3a3a;
+    --bg: #0d0d0d;
+    --focus: #e8e8e8;
+  }
+}
+
+body {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono",
+    monospace;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding: 1.5rem 1rem 3rem;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  inset-inline-start: 1rem;
+  inset-block-start: 0;
+  transform: translateY(-120%);
+  padding: 0.4rem 0.6rem;
+  background: var(--bg);
+  border: 1px solid var(--fg);
+  z-index: 10;
+}
+
+.skip-link:focus {
+  transform: translateY(0.5rem);
+}
+
+h1 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-block: 2rem 0.75rem;
+  padding-block-end: 0.35rem;
+  border-block-end: 1px solid var(--line);
+}
+
+h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-block-start: 1.25rem;
+}
+
+h4 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-block: 0.75rem 0.35rem;
+}
+
+.site-header {
+  display: grid;
+  gap: 0.75rem;
+  margin-block-end: 0.5rem;
+  padding-block-end: 1rem;
+  border-block-end: 1px solid var(--line);
+}
+
+.role {
+  font-weight: 600;
+  margin-block-start: 0.25rem;
+}
+
+.availability strong {
+  font-weight: 700;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-block: 0.15rem 0.5rem;
+}
+
+.contact,
+.toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  font-size: 0.8rem;
+}
+
+.contact a,
+.toc a {
+  text-decoration: underline;
+}
+
+/* Impact */
+.impact-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+@media (min-width: 40rem) {
+  .impact-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+.impact-card {
+  padding: 0.85rem 0.9rem;
+  border: 1px solid var(--line);
+  background: var(--card);
+}
+
+.impact-card h3 {
+  margin-block: 0 0.25rem;
+  font-size: 0.9rem;
+}
+
+.impact-card p {
+  margin: 0.35rem 0 0;
+  font-size: 0.8rem;
+}
+
+.impact-card .meta {
+  margin-block: 0 0.35rem;
+}
+
+.skill-groups {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.skill-groups dt {
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.skill-groups dd {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+ul {
+  padding-inline-start: 1.25rem;
+}
+
+li + li {
+  margin-block-start: 0.35rem;
+}
+
+article + article {
+  margin-block-start: 0.5rem;
+}
+
+/* Earlier experience collapse */
+.earlier {
+  margin-block-start: 1.5rem;
+  border: 1px solid var(--line);
+  padding: 0.5rem 0.85rem 0.85rem;
+}
+
+.earlier > summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.85rem;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.75rem;
+  padding-block: 0.35rem;
+}
+
+.earlier > summary::-webkit-details-marker {
+  display: none;
+}
+
+.earlier > summary::before {
+  content: "+";
+  font-weight: 700;
+  width: 1rem;
+}
+
+.earlier[open] > summary::before {
+  content: "−";
+}
+
+.earlier > summary .meta {
+  font-weight: 400;
+  margin: 0;
+}
+
+.earlier[open] {
+  padding-block-end: 1rem;
+}
+
+blockquote {
+  margin-block: 1rem 0;
+  padding-inline-start: 0.85rem;
+  border-inline-start: 2px solid var(--line);
+}
+
+blockquote p {
+  margin: 0;
+}
+
+blockquote footer {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-block-start: 0.4rem;
+}
+
+.recs-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 0.75rem;
+}
+
+.site-footer {
+  margin-block-start: 2.5rem;
+  padding-block-start: 1rem;
+  border-block-start: 1px solid var(--line);
+}
+
+section p + p {
+  margin-block-start: 0.5rem;
+}
+
+/* Contact form */
+.contact-form {
+  display: grid;
+  gap: 0.85rem;
+  margin-block-start: 1rem;
+  max-width: 28rem;
+}
+
+.contact-form .field {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.contact-form label {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  font: inherit;
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 0;
+}
+
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-color: var(--fg);
+}
+
+.contact-form textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.contact-form button[type="submit"] {
+  justify-self: start;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--fg);
+  border: 1px solid var(--fg);
+  cursor: pointer;
+}
+
+.contact-form button[type="submit"]:hover {
+  opacity: 0.88;
+}
+
+.contact-form button[type="submit"]:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.contact-form .hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-status {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.form-note {
+  margin: 0;
+}
+
+.thanks {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding: 3rem 1rem;
+}
+
+.thanks h1 {
+  margin-block-end: 0.75rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Print / PDF */
+@media print {
+  :root {
+    --fg: #000;
+    --muted: #333;
+    --line: #999;
+    --bg: #fff;
+    --card: #fff;
+  }
+
+  body {
+    max-width: none;
+    padding: 0;
+    font-size: 10pt;
+    line-height: 1.4;
+  }
+
+  .skip-link,
+  .toc,
+  .contact-form,
+  #contact .form-note {
+    display: none !important;
+  }
+
+  #contact .meta:first-of-type::after {
+    content: none;
+  }
+
+  .earlier {
+    border: none;
+    padding: 0;
+  }
+
+  .earlier > summary {
+    display: none;
+  }
+
+  .earlier article {
+    display: block;
+  }
+
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h2 {
+    margin-block: 1rem 0.4rem;
+    break-after: avoid;
+  }
+
+  article,
+  blockquote,
+  .impact-card {
+    break-inside: avoid;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .contact a[href^="http"]::after,
+  .contact a[href^="mailto"]::after,
+  .site-footer a[href^="http"]::after,
+  .site-footer a[href^="mailto"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: var(--muted);
+  }
+
+  .site-header {
+    border-block-end-color: #000;
+  }
+}
