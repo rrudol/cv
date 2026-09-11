@@ -11,15 +11,36 @@ python3 -m http.server 8765
 
 Otwórz: <http://localhost:8765>
 
+## Live
+
+| URL | Status |
+|-----|--------|
+| https://rudol-cv.pages.dev | **Production (live)** |
+| https://github.com/rrudol/cv | Source |
+| https://rudol.dev | Custom domain (CNAME — see below) |
+
+Redeploy:
+
+```bash
+npx wrangler pages deploy www --project-name=rudol-cv --branch=main
+```
+
 ## Deploy (Cloudflare Pages)
 
-1. Repo → **Workers & Pages** → Create → Connect git (lub Direct Upload folder `www`).
-2. **Build settings**
-   - Framework preset: None
-   - Build command: _(empty)_
-   - Output directory: `www`
-3. Custom domain: `rudol.dev` (+ `www` → redirect).
-4. Headers z `www/_headers` są stosowane automatycznie na CF Pages.
+Already created: project **`rudol-cv`**, account Rafał Rudol.
+
+### Custom domain `rudol.dev`
+
+Pages domains are registered on the project (`rudol.dev`, `www.rudol.dev`) but the Wrangler OAuth token cannot write DNS. In **Cloudflare Dashboard → rudol.dev → DNS** add:
+
+| Type | Name | Target | Proxy |
+|------|------|--------|-------|
+| CNAME | `@` (rudol.dev) | `rudol-cv.pages.dev` | Proxied |
+| CNAME | `www` | `rudol-cv.pages.dev` | Proxied |
+
+If apex CNAME is blocked by other records, use a flattened CNAME / ALIAS to `rudol-cv.pages.dev`, or CF “Custom domains” UI on the Pages project (it can create records when you have full zone access in the browser).
+
+After DNS propagates, domain status in Pages → Custom domains should flip to **Active**.
 
 ### Netlify
 
