@@ -1,0 +1,147 @@
+[
+  {
+    "id": "58b63dd3263e",
+    "common": "/Users/rafal/Projects/rudol_dev/hello_wasm/.git",
+    "path": "/Users/rafal/Projects/rudol_dev/hello_wasm",
+    "origin": "https://github.com/rrudol/cv.git",
+    "repository": "rrudol/cv",
+    "worktrees": [
+      {
+        "path": "/Users/rafal/Projects/rudol_dev/hello_wasm",
+        "excluded_files": [],
+        "snapshot": "1b4459dededd894547f98cdb15e678e15e431eac",
+        "index_snapshot": null,
+        "head": "72d62d78938c1e37481dc40ed7c39993f0a3ec83",
+        "branch": "main",
+        "original_status_sha256": "99b3b6a0cffcca895a2bc6f121bc8408910b1e0db75b9a4d969351b0623ab162",
+        "original_status": [
+          " M www/index.html",
+          " M www/thanks.html",
+          "?? .scratch/homepage/issues/01-astro-on-pages.md",
+          "?? .scratch/homepage/issues/02-syndicate-x-bluesky.md",
+          "?? .scratch/homepage/issues/03-project-url-inventory.md",
+          "?? .scratch/homepage/issues/04-home-project-handful.md",
+          "?? .scratch/homepage/issues/05-experience-port.md",
+          "?? .scratch/homepage/issues/06-home-prototype.md",
+          "?? .scratch/homepage/issues/07-essay-frontmatter.md",
+          "?? .scratch/homepage/issues/08-chrome.md",
+          "?? .scratch/homepage/issues/09-x-autopost.md",
+          "?? .scratch/homepage/issues/10-unlinkable-projects.md",
+          "?? .scratch/homepage/map.md",
+          "?? .scratch/homepage/research/01-astro-on-pages.md",
+          "?? .scratch/homepage/research/02-syndicate-x-bluesky.md",
+          "?? .scratch/homepage/research/03-project-url-inventory.md",
+          "?? CONTEXT.md",
+          ""
+        ],
+        "unchanged_during_snapshot": true
+      }
+    ],
+    "refs": [
+      {
+        "kind": "ref",
+        "source": "refs/heads/main",
+        "oid": "72d62d78938c1e37481dc40ed7c39993f0a3ec83",
+        "original_oid": "72d62d78938c1e37481dc40ed7c39993f0a3ec83",
+        "remote_ref": "refs/heads/backup/pre-format-20260913/58b63dd3263e/ref/f921bd05e68b",
+        "status": "ALREADY_ON_ORIGIN"
+      },
+      {
+        "kind": "head",
+        "source": "/Users/rafal/Projects/rudol_dev/hello_wasm",
+        "oid": "72d62d78938c1e37481dc40ed7c39993f0a3ec83",
+        "remote_ref": "refs/heads/backup/pre-format-20260913/58b63dd3263e/head/a61eb49f283e",
+        "status": "ALREADY_ON_ORIGIN"
+      },
+      {
+        "kind": "snapshot",
+        "source": "/Users/rafal/Projects/rudol_dev/hello_wasm",
+        "oid": "1b4459dededd894547f98cdb15e678e15e431eac",
+        "remote_ref": "refs/heads/backup/pre-format-20260913/58b63dd3263e/snapshot/a61eb49f283e",
+        "push_oid": "a178c212bf3d8ab10ddfa1741cd3262d27b31bfa",
+        "status": "VERIFIED"
+      }
+    ],
+    "status": "PUBLISHED",
+    "advertised": [
+      "72d62d78938c1e37481dc40ed7c39993f0a3ec83"
+    ],
+    "secret_findings": []
+  },
+  {
+    "id": "6dd418781298",
+    "common": "/Users/rafal/Projects/rudol_dev/hello_wasm/.git#final-20260913-a61eb49f283e",
+    "path": "/Users/rafal/Projects/rudol_dev/hello_wasm",
+    "origin": "https://github.com/rrudol/cv.git",
+    "repository": "rrudol/cv",
+    "worktrees": [
+      {
+        "path": "/Users/rafal/Projects/rudol_dev/hello_wasm",
+        "excluded_files": [],
+        "snapshot": "3d497393a7296ec3dcadb8ed621df1bf14e78dd2",
+        "index_snapshot": null,
+        "head": "72d62d78938c1e37481dc40ed7c39993f0a3ec83",
+        "branch": "main",
+        "original_status_sha256": "db57c819594c41d570086472340b8ea918b5d74726a373cf95f50ee26102e680",
+        "original_status": [
+          "?? .scratch/homepage/issues/01-astro-on-pages.md",
+          "?? .scratch/homepage/issues/02-syndicate-x-bluesky.md",
+          "?? .scratch/homepage/issues/03-project-url-inventory.md",
+          "?? .scratch/homepage/issues/04-home-project-handful.md",
+          "?? .scratch/homepage/issues/05-experience-port.md",
+          "?? .scratch/homepage/issues/06-home-prototype.md",
+          "?? .scratch/homepage/issues/07-essay-frontmatter.md",
+          "?? .scratch/homepage/issues/08-chrome.md",
+          "?? .scratch/homepage/issues/09-x-autopost.md",
+          "?? .scratch/homepage/issues/10-unlinkable-projects.md",
+          "?? .scratch/homepage/map.md",
+          "?? .scratch/homepage/research/01-astro-on-pages.md",
+          "?? .scratch/homepage/research/02-syndicate-x-bluesky.md",
+          "?? .scratch/homepage/research/03-project-url-inventory.md",
+          ""
+        ],
+        "unchanged_during_snapshot": true
+      }
+    ],
+    "refs": [
+      {
+        "kind": "ref",
+        "source": "refs/heads/main",
+        "oid": "72d62d78938c1e37481dc40ed7c39993f0a3ec83",
+        "original_oid": "72d62d78938c1e37481dc40ed7c39993f0a3ec83",
+        "remote_ref": "refs/heads/backup/pre-format-20260913/6dd418781298/ref/f921bd05e68b",
+        "status": "ALREADY_ON_ORIGIN"
+      },
+      {
+        "kind": "ref",
+        "source": "refs/heads/wip/pre-format-2026-09-13",
+        "oid": "ff6ee5541772bb7875e66986ad4226b6e5d06df6",
+        "original_oid": "ff6ee5541772bb7875e66986ad4226b6e5d06df6",
+        "remote_ref": "refs/heads/backup/pre-format-20260913/6dd418781298/ref/4ce272eb91c5",
+        "status": "ALREADY_ON_ORIGIN"
+      },
+      {
+        "kind": "head",
+        "source": "/Users/rafal/Projects/rudol_dev/hello_wasm",
+        "oid": "72d62d78938c1e37481dc40ed7c39993f0a3ec83",
+        "remote_ref": "refs/heads/backup/pre-format-20260913/6dd418781298/head/a61eb49f283e",
+        "status": "ALREADY_ON_ORIGIN"
+      },
+      {
+        "kind": "snapshot",
+        "source": "/Users/rafal/Projects/rudol_dev/hello_wasm",
+        "oid": "3d497393a7296ec3dcadb8ed621df1bf14e78dd2",
+        "remote_ref": "refs/heads/backup/pre-format-20260913/6dd418781298/snapshot/a61eb49f283e",
+        "push_oid": "5e804416aca64d7be4285147a6a189e0781ff6bd",
+        "status": "VERIFIED"
+      }
+    ],
+    "status": "PUBLISHED",
+    "advertised": [
+      "72d62d78938c1e37481dc40ed7c39993f0a3ec83",
+      "a178c212bf3d8ab10ddfa1741cd3262d27b31bfa",
+      "ff6ee5541772bb7875e66986ad4226b6e5d06df6"
+    ],
+    "secret_findings": []
+  }
+]
